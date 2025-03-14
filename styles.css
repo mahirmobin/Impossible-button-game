@@ -1,0 +1,67 @@
+
+container {
+    width: 200px;
+    height: 200px;
+    background: rgb(178, 217, 246);
+    border-radius: 50% 30% 40% 70%;
+    animation: changeColor 3s infinite alternate;
+}
+
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #8d7070;
+    overflow: hidden;
+    animation: changeColor 3s infinite alternate;
+} 
+#moving-btn {
+    width: 60px;  /* Equal width & height */
+    height: 60px;
+    background-color: rgb(123, 123, 176);
+    color: white;
+    border: none;
+    border-radius: 50%;  /* Makes it a circle */
+    font-size: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute  ;
+    animation: changeshape 3s infinite alternate, bounce 8s infinite alternate, changeColor 9s infinite alternate;
+
+}
+@keyframes move {
+    0% { left: 0%; }
+    50% { right: 50%; }
+    100% {left: 100%}
+
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(50px); }
+}
+
+@keyframes changeColor {
+    0% { background-color: rgb(10, 20, 19); }
+    50% { background-color: rgb(184, 184, 199); }
+    100% { background-color: rgb(135, 99, 124); }
+}
+
+@keyframes changeColor1 {
+    0% { background-color: rgb(149, 117, 175); }
+    50% { background-color: rgb(154, 154, 176); }
+    100% { background-color: rgb(184, 178, 115); }
+}
+@keyframes changeshape {
+    0% {  width: 60px;  
+        height: 60px; }
+    50% { width: 40px;  
+        height: 40px;}
+    100% { width: 10px;  
+        height: 10px;} 
+}
